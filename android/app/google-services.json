@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "225713285321",
+    "firebase_url": "https://bhagavadgita-bddb3-default-rtdb.firebaseio.com",
+    "project_id": "bhagavadgita-bddb3",
+    "storage_bucket": "bhagavadgita-bddb3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225713285321:android:60e34d1784540759da8518",
+        "android_client_info": {
+          "package_name": "corerd.solution.bhagavad.gita"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTPThE2ZqQm97QsOgw966UyHqxdjU_MPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
