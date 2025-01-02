@@ -43,6 +43,8 @@ class _AartiDetailsState extends State<AartiDetails> {
           padding: EdgeInsets.only(
             top:
                 MediaQuery.of(context).viewPadding.top + kTextTabBarHeight + 30,
+            left: 10,
+            right: 10,
           ),
           child: SingleChildScrollView(
             child: Column(

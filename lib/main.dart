@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_it/get_it.dart';
@@ -39,6 +40,8 @@ final getIt = GetIt.instance;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(
+      widgetsBinding: WidgetsFlutterBinding.ensureInitialized());
   await Firebase.initializeApp();
   await FirebaseDatabaseHelper().adsVisible();
   await GetStorage.init();
@@ -55,8 +58,23 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    initialization();
+  }
+
+  void initialization() async {
+    FlutterNativeSplash.remove();
+  }
 
   @override
   Widget build(BuildContext context) {

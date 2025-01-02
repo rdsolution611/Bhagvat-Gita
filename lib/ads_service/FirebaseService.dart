@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-// import 'package:gdpr_dialog/gdpr_dialog.dart';
+import 'package:gdpr_dialog/gdpr_dialog.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:testingnew/ads_service/app_lifecycle_reactor.dart';
@@ -67,13 +67,13 @@ class FirebaseDatabaseHelper {
                 testDeviceIds: kDebugMode ? [] : [],
               ),
             );
-            // if (banner.isTrue) {
-            //   await GdprDialog.instance
-            //       .showDialog(isForTest: false, testDeviceId: '')
-            //       .then((onValue) {
-            //     print('result === $onValue');
-            //   });
-            // }
+            if (banner.isTrue) {
+              await GdprDialog.instance
+                  .showDialog(isForTest: false, testDeviceId: '')
+                  .then((onValue) {
+                print('result === $onValue');
+              });
+            }
             AppLifecycleReactor? appLifecycleReactor;
             AppOpenAdManager appOpenAdManager = AppOpenAdManager()..loadAd();
             appLifecycleReactor =

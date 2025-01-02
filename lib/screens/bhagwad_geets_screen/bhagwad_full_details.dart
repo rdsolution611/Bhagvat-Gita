@@ -84,8 +84,9 @@ class _BhagwadFullDetailsState extends State<BhagwadFullDetails> {
         ),
         body: Padding(
           padding: EdgeInsets.only(
-            top: MediaQuery.of(context).padding.top + kToolbarHeight,
-          ),
+              top: MediaQuery.of(context).padding.top + kToolbarHeight,
+              left: 8,
+              right: 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:testingnew/ads_service/ad_services.dart';
 import 'package:testingnew/ads_service/banner_ads_show.dart';
+
+import '../../main.dart';
 
 class HomePage extends StatefulWidget {
   static const String route = "/HomePage";
@@ -13,12 +16,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Map<String, dynamic>> items = [
     {"name": "આરતી", "image": 'assets/aarti.jpeg'},
-    {"name": "શ્રીમદ ભગવદગીતા", "image": 'assets/bhagwad_geeta.jpeg'},
-    {"name": "ભજન", "image": 'assets/bhajan.jpeg'},
-    {"name": "મહાભારત વાર્તા", "image": 'assets/mahabharat.jpeg'},
-    {"name": "સુવિચાર", "image": 'assets/suvichar.jpeg'},
-    {"name": "મનપસંદ", "image": 'assets/mahabharat.jpeg'},
-    {"name": "સેટિંગ્સ", "image": 'assets/suvichar.jpeg'},
+    {"name": "શ્રીમદ ભગવદગીતા", "image": 'assets/geet_bg.jpeg'},
+    {"name": "ભજન", "image": 'assets/bhajan.jpg'},
+    {"name": "મહાભારત વાર્તા", "image": 'assets/mahabharat.jpg'},
+    {"name": "સુવિચાર", "image": 'assets/suvichar.jpg'},
+    {"name": "મનપસંદ", "image": 'assets/favourite.jpg'},
+    {"name": "સેટિંગ્સ", "image": 'assets/setting.jpg'},
   ];
 
   @override
@@ -68,22 +71,30 @@ class _HomePageState extends State<HomePage> {
             itemCount: items.length,
             itemBuilder: (context, index) {
               return InkWell(
-                onTap: () {
-                  if (index == 0) {
-                    Get.toNamed('/AartiHome', arguments: 'Aarti');
-                  } else if (index == 1) {
-                    Get.toNamed('/BhagavadGeetaHome');
-                  } else if (index == 2) {
-                    Get.toNamed('/AartiHome', arguments: 'Bhajan');
-                  } else if (index == 3) {
-                    Get.toNamed('/AartiHome', arguments: 'Mahabharat');
-                  } else if (index == 4) {
-                    Get.toNamed('/SuvicharPage');
-                  } else if (index == 5) {
-                    Get.toNamed('/FavoritePage');
-                  } else if (index == 6) {
-                    Get.toNamed('/SettingsPage');
+                onTap: () async {
+                  getIt<AdService>().loadInterstitialAd();
+                  try {
+                    getIt<AdService>().showInterstitialAd();
+                  } catch (e) {
+                    print("not loaded");
+                  } finally {
+                    if (index == 0) {
+                      Get.toNamed('/AartiHome', arguments: 'Aarti');
+                    } else if (index == 1) {
+                      Get.toNamed('/BhagavadGeetaHome');
+                    } else if (index == 2) {
+                      Get.toNamed('/AartiHome', arguments: 'Bhajan');
+                    } else if (index == 3) {
+                      Get.toNamed('/AartiHome', arguments: 'Mahabharat');
+                    } else if (index == 4) {
+                      Get.toNamed('/SuvicharPage');
+                    } else if (index == 5) {
+                      Get.toNamed('/FavoritePage');
+                    } else if (index == 6) {
+                      Get.toNamed('/SettingsPage');
+                    }
                   }
+                  // });
                 },
                 child: Container(
                   padding: const EdgeInsets.all(12),

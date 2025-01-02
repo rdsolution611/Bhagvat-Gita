@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../screens/aarti_screen/aarti_details.dart';
 import '../screens/aarti_screen/aarti_home.dart';
-import '../screens/bhagwag_geets_screen/bhagwad_details.dart';
-import '../screens/bhagwag_geets_screen/bhagwad_full_details.dart';
-import '../screens/bhagwag_geets_screen/bhagwad_geets_home.dart';
+import '../screens/bhagwad_geets_screen/bhagwad_details.dart';
+import '../screens/bhagwad_geets_screen/bhagwad_full_details.dart';
+import '../screens/bhagwad_geets_screen/bhagwad_geets_home.dart';
 import '../screens/favorite_screen/favorite_page.dart';
 import '../screens/home_screen/home_screen.dart';
 import '../screens/settings_screen/settings_page.dart';
