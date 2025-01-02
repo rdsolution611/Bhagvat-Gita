@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../home_screen/home_screen.dart';
+
 class SplashScreen extends StatelessWidget {
   static const String route = "/SplashScreen";
   SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Future.delayed(Duration(seconds: 3), () {
-    //   Navigator.pushReplacementNamed(context, HomePage.route);
-    // });
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, HomePage.route);
+    });
     return Container(
       height: 1.sh,
       width: 1.sw,
